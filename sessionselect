@@ -1,0 +1,10 @@
+#!/bin/sh
+
+choices="Lock Screen\nReboot\nShutdown"
+chosen=$(echo "$choices" | dmenu -i -p "Session Options")
+
+case "$chosen" in
+	"Lock Screen") slock;;
+	Reboot) rebootalert;;
+	Shutdown) poweroffalert;; 
+esac

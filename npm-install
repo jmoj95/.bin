@@ -1,0 +1,3 @@
+#!/bin/bash
+
+npm -g install $1 --prefix $NPM_HOME

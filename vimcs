@@ -1,0 +1,3 @@
+#!/bin/sh
+
+feh -g 1024x724 ~/Imagens/vim-cheat-sheets/vi-vim-tutorial-1.gif

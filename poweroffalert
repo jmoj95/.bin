@@ -1,0 +1,3 @@
+#!/bin/sh
+
+alertcmd "Shutdown computer?" poweroff

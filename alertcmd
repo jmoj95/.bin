@@ -1,0 +1,8 @@
+#!/bin/sh
+
+chosen=$(echo "No\nYes" | dmenu -i -p "$1")
+
+case "$chosen" in
+	No) ;;
+	Yes) $2;;
+esac

@@ -1,0 +1,13 @@
+#!/bin/sh
+
+folder=$(pwd)
+folderbasename=${PWD##*/}
+basefolder=Music
+devicefolder=$folderbasename
+
+mtp-newfolder "$folderbasename" 124 0
+
+for file in "$folder"/* ; do
+	echo "SENDING FILE: $file to $devicefolder"
+	mtp-sendfile "$file" "$devicefolder"
+done
