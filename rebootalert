@@ -1,3 +1,3 @@
 #!/bin/sh
 
-alertcmd "Reboot Computer?" reboot 
+alertcmd "Reboot Computer?" "sudo reboot" 

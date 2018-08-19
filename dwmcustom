@@ -1,22 +1,22 @@
 #!/bin/sh
 
 # Set keyboard layout to pt-br abnt2
-setxkbmap br
+# setxkbmap br
 
 # Set wallpaper
-~/.fehbg &
+# ~/.fehbg &
 
 # Volume
 #VOLUME=$(amixer sget Master | grep -e 'Front Left:' | sed 's/[^\[]*\[\([0-9]\{1,3\}%\).*(on\|off\).*/\2 \1/' | sed 's/off/M/' | sed 's/on //')
 
 # CPU
-CPU=$(top -bn 1 | grep '^%CPU' | tr -d 'ius,' | awk '{print "CPU: "$2" USR, "$3" SIS"}')
+CPU=$(top -bn 1 | grep %Cpu | tr -d '%Cpu(s):,y' | awk '{print"CPU: "$1" USR, "$2" SYS"}')
 
 # Memory
 MEM=$(free -m | grep '^Mem' | awk '{print "RAM: "$3"MiB/"$2"MiB"}')
 
 # Date
-DATE=$(date +"%A, %d de %B de %G, %R")
+DATE=$(date +"%A, %B %d, %G, %R")
 
 xsetroot -name " $CPU | $MEM | $DATE "
 
