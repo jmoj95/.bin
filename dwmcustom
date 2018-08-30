@@ -18,6 +18,14 @@ MEM=$(free -m | grep '^Mem' | awk '{print "RAM: "$3"MiB/"$2"MiB"}')
 # Date
 DATE=$(date +"%A, %B %d, %G, %R")
 
-xsetroot -name " $CPU | $MEM | $DATE "
+# Battery
+BAT_STATUS=$(acpi)
+if [ "$BAT_STATUS" = "" ]; then
+	BAT='BAT: Not Plugged'
+else
+	BAT=$($BAT_STATUS | tr -d ',' | awk '{print"BAT: "$3" ("$4" - "$5")"}')
+fi
+
+xsetroot -name " $CPU | $MEM | $BAT | $DATE "
 
 #exec barM &

@@ -1,11 +1,11 @@
 #!/bin/sh
 
-choices="Lock Screen\nReboot\nShutdown\nSleep"
+choices="Lock Screen\nSleep\nReboot\nShutdown"
 chosen=$(echo "$choices" | dmenu -i -p "Session Options")
 
 case "$chosen" in
 	"Lock Screen") slock;;
+	Sleep) sleepalert;;
 	Reboot) rebootalert;;
 	Shutdown) poweroffalert;; 
-	Sleep) sleepalert;;
 esac
